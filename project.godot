@@ -11,12 +11,14 @@ config_version=5
 [application]
 
 config/name="GameJam2025"
+run/main_scene="uid://blut7g0bpjqdp"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Context="*res://source/globals/context.gd"
+Log="*res://source/globals/log.gd"
 
 [rendering]
 
