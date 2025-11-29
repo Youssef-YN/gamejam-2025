@@ -79,3 +79,8 @@ func attack(direction: Vector2):
 			play("shoot_right")
 			await animation_finished
 			is_attacking = false
+
+
+func _on_frame_changed() -> void:
+	if frame == 2 and is_attacking:
+		Context.player.attack.attack((get_global_mouse_position() - global_position).normalized())

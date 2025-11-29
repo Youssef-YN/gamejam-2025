@@ -525,7 +525,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_b01tx")
 }],
-"loop": true,
+"loop": false,
 "name": &"shoot_down",
 "speed": 10.0
 }, {
@@ -548,7 +548,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_yjwen")
 }],
-"loop": true,
+"loop": false,
 "name": &"shoot_right",
 "speed": 10.0
 }, {
@@ -571,14 +571,15 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_e0i6b")
 }],
-"loop": true,
+"loop": false,
 "name": &"shoot_up",
 "speed": 10.0
 }]
 
 [node name="PlayerSpriteComponent" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_mxiqm")
-animation = &"run_right"
+animation = &"death"
 autoplay = "idle_down"
-frame_progress = 0.4186738
 script = ExtResource("1_mxiqm")
+
+[connection signal="frame_changed" from="." to="." method="_on_frame_changed"]

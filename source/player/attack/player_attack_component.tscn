@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1ikyu2h020fj"]
+
+[ext_resource type="Script" uid="uid://cj0nby3h6suts" path="res://source/player/attack/player_attack_component.gd" id="1_nd55w"]
+[ext_resource type="AudioStream" uid="uid://dciogpy63gfbd" path="res://assets/sounds/bullet/bullets.mp3" id="2_riypy"]
+
+[node name="PlayerAttackComponent" type="Node2D"]
+script = ExtResource("1_nd55w")
+
+[node name="BulletSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_riypy")

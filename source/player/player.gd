@@ -3,6 +3,10 @@ class_name Player
 
 ## Components
 @onready var sprite: PlayerSpriteComponent = $PlayerSpriteComponent
+@onready var attack: PlayerAttackComponent = $PlayerAttackComponent
+@onready var collision: PlayerCollisionComponent = $PlayerCollisionComponent
+@onready var camera: PlayerCameraComponent = $PlayerCameraComponent
+@onready var movement: PlayerMovementComponent = $PlayerMovementComponent
 
 
 
