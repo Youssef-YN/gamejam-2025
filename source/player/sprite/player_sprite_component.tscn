@@ -578,6 +578,7 @@ animations = [{
 
 [node name="PlayerSpriteComponent" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_mxiqm")
-animation = &"shoot_right"
+animation = &"run_right"
 autoplay = "idle_down"
+frame_progress = 0.4186738
 script = ExtResource("1_mxiqm")

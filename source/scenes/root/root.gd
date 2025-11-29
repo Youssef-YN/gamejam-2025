@@ -11,6 +11,7 @@ const WORLD = preload("uid://cb5d3qjslwhhp")
 func _ready() -> void:
 	Context.root = self
 	Log.info("Root is loaded!")
+	load_world()
 
 
 
