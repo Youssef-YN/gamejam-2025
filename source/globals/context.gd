@@ -5,3 +5,4 @@ extends Node
 ## So instead of using dependency injection, we make them public and accessible.
 var root: Root
 var world: World
+var player: Player

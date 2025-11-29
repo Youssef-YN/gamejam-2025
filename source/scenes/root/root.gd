@@ -5,7 +5,29 @@ class_name Root
 ## This node also functions as a router.
 ## Meaning scene switching, map switching... will happen here.
 
+const WORLD = preload("uid://cb5d3qjslwhhp")
+
 
 func _ready() -> void:
 	Context.root = self
 	Log.info("Root is loaded!")
+
+
+
+static func clear(node: Node):
+	for child in node.get_children():
+		child.queue_free()
+
+
+
+func load_world() -> void:
+	clear(self)
+	var world: World = WORLD.instantiate()
+	add_child(world)
+
+
+
+func load_map(scene: PackedScene) -> void:
+	load_world()
+	var map: Node = scene.instantiate()
+	Context.world.add_child(map)
