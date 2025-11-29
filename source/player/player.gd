@@ -1,10 +1,20 @@
 extends CharacterBody2D
 class_name Player
 
+## Components
+@onready var sprite: PlayerSpriteComponent = $PlayerSpriteComponent
+
+
+
+var is_dying: bool = false
+
+
+
 func _ready() -> void:
 	Context.player = self
 	_assign_self()
 	Log.info("Player is loaded!")
+
 
 
 ## Check if a child has the player var reference.
