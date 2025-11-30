@@ -32,7 +32,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		Context.player.sprite.attack(direction)
 	
 	if event is InputEventMouseMotion:
-		line.points[-1] = (get_global_mouse_position() - global_position) * 100
+		line.points[-1] = (get_global_mouse_position() - global_position).normalized() * 1000
 
 func attack(direction: Vector2) -> void:
 	var bullet: Bullet = Bullet.shoot(direction)

@@ -22,7 +22,7 @@ func _unhandled_input(event: InputEvent) -> void:
 ## Then since we just stomped we set can stomp is false, then set a timer to enablet it back after it's done
 func stomp() -> void:
 	if can_stomp:
-		var area: DetectionAreaComponent = DetectionAreaComponent.get_instance(0.5)
+		var area: DetectionAreaComponent = DetectionAreaComponent.get_instance(1.5, 3)
 		area.global_position = player.global_position
 		Context.world.add_child(area)
 		can_stomp = false

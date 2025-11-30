@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dnbxm86ac8xy8"]
+[gd_scene load_steps=12 format=3 uid="uid://dnbxm86ac8xy8"]
 
 [ext_resource type="Script" uid="uid://vdfq85xtel12" path="res://source/enemies/coffin/coffin.gd" id="1_b7g0c"]
 [ext_resource type="PackedScene" uid="uid://dy726ofetvj73" path="res://source/enemies/coffin/health/c_coffin_health.tscn" id="2_5hje7"]
@@ -7,12 +7,16 @@
 [ext_resource type="PackedScene" uid="uid://034pj6ygypb2" path="res://source/enemies/coffin/movement/c_coffin_movement.tscn" id="4_sjsw6"]
 [ext_resource type="PackedScene" uid="uid://bhv142fvfa0am" path="res://source/enemies/coffin/attack/c_coffin_attack.tscn" id="5_123ql"]
 [ext_resource type="PackedScene" uid="uid://cbbjss5ghb8ag" path="res://source/enemies/coffin/hurtbox/c_coffin_hurtbox.tscn" id="6_ymkrj"]
+[ext_resource type="PackedScene" uid="uid://8nfpqlfm04km" path="res://source/enemies/coffin/detection/coffin_detection_component.tscn" id="8_b2mun"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sjsw6"]
 size = Vector2(20, 14)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ymkrj"]
 size = Vector2(18, 39)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_56usk"]
+height = 38.0
 
 [node name="Coffin" type="CharacterBody2D"]
 collision_layer = 2
@@ -40,5 +44,12 @@ metadata/_edit_lock_ = true
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CCoffinHurtbox"]
+visible = false
 position = Vector2(0, -1.5)
 shape = SubResource("RectangleShape2D_ymkrj")
+
+[node name="CoffinDetectionComponent" parent="." instance=ExtResource("8_b2mun")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CoffinDetectionComponent"]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_56usk")

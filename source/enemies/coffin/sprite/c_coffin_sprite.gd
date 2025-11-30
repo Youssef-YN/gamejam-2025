@@ -44,3 +44,6 @@ func move(direction: Vector2) -> void:
 					Vector2.LEFT:
 						flip_h = true
 						play("idle_right")
+
+func _process(_delta: float) -> void:
+	visible = coffin.is_shown

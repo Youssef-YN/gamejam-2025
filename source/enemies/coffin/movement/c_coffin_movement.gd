@@ -1,7 +1,7 @@
 extends Node2D
 class_name CoffinMovementComponent
 
-var speed = 30.0
+var speed = 60.0
 var vertical: bool = true
 
 var coffin: EnemyCoffin
