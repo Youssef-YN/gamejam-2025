@@ -3,13 +3,14 @@ class_name PlayerStompComponent
 
 @onready var cooldown_timer: Timer = $Cooldown
 
-@export var cooldown_length: int = 5
+@export var cooldown_length: float = 5
 var can_stomp: bool = true
 
 var player: Player
 
 func _ready() -> void:
 	await get_parent().ready
+	cooldown_timer.wait_time = cooldown_length
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("stomp"):

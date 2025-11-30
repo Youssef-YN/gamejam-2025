@@ -7,7 +7,7 @@ var direction: Vector2 = Vector2.RIGHT
 var speed: float = 200.
 
 func _ready() -> void:
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(2.0).timeout
 	queue_free()
 
 func _process(delta: float) -> void:
