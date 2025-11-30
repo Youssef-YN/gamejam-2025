@@ -4,13 +4,20 @@ class_name PlayerAttackComponent
 @onready var line: Line2D = $ShootLine
 
 var player: Player
-var is_showing_line: bool = false:
+
+@export var is_showing_line: bool:
 	set(value):
-		is_showing_line = value
+		_is_showing_line = value
 		line.visible = is_showing_line
+	get:
+		return _is_showing_line
+
+var _is_showing_line: bool = true
+
 
 func _ready() -> void:
 	await get_parent().ready
+	line.visible = is_showing_line
 
 
 func _unhandled_input(event: InputEvent) -> void:
