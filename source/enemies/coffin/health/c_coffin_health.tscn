@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dy726ofetvj73"]
+
+[ext_resource type="Script" uid="uid://b58o1t3t3r0me" path="res://source/enemies/coffin/health/c_coffin_health.gd" id="1_xmk4r"]
+
+[node name="CCoffinHealth" type="Node2D"]
+script = ExtResource("1_xmk4r")

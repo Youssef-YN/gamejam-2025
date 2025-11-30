@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://034pj6ygypb2"]
+
+[ext_resource type="Script" uid="uid://ccd7fbu1oiahr" path="res://source/enemies/coffin/movement/c_coffin_movement.gd" id="1_1qc0a"]
+
+[node name="CCoffinMovement" type="Node2D"]
+script = ExtResource("1_1qc0a")

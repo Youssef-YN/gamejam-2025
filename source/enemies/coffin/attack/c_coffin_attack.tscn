@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhv142fvfa0am"]
+
+[ext_resource type="Script" uid="uid://cnddpsdc5wjcg" path="res://source/enemies/coffin/attack/c_coffin_attack.gd" id="1_kmv32"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kmv32"]
+radius = 30.016663
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kmv32"]
+
+[node name="CCoffinAttack" type="Node2D"]
+script = ExtResource("1_kmv32")
+
+[node name="DetectionArea" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+shape = SubResource("CircleShape2D_kmv32")
+
+[node name="AttackArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+shape = SubResource("RectangleShape2D_kmv32")
+debug_color = Color(0.9685535, 0, 0.47020167, 0.41960785)

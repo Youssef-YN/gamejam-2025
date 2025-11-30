@@ -1,0 +1,45 @@
+[gd_scene load_steps=10 format=3 uid="uid://cssf0mxctpjy3"]
+
+[ext_resource type="Script" uid="uid://vdfq85xtel12" path="res://source/enemies/coffin/coffin.gd" id="1_b7g0c"]
+[ext_resource type="PackedScene" uid="uid://dy726ofetvj73" path="res://source/enemies/coffin/health/c_coffin_health.tscn" id="2_5hje7"]
+[ext_resource type="PackedScene" uid="uid://cgg78td3hnauu" path="res://source/enemies/coffin/sprite/c_coffin_sprite.tscn" id="2_6p7ok"]
+[ext_resource type="PackedScene" uid="uid://caltk34q4l5vx" path="res://source/enemies/coffin/collision/c_coffin_collision.tscn" id="3_6nex1"]
+[ext_resource type="PackedScene" uid="uid://034pj6ygypb2" path="res://source/enemies/coffin/movement/c_coffin_movement.tscn" id="4_sjsw6"]
+[ext_resource type="PackedScene" uid="uid://bhv142fvfa0am" path="res://source/enemies/coffin/attack/c_coffin_attack.tscn" id="5_123ql"]
+[ext_resource type="PackedScene" uid="uid://cbbjss5ghb8ag" path="res://source/enemies/coffin/hurtbox/c_coffin_hurtbox.tscn" id="6_ymkrj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sjsw6"]
+size = Vector2(20, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ymkrj"]
+size = Vector2(18, 39)
+
+[node name="Coffin" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_b7g0c")
+
+[node name="CCoffinHealth" parent="." instance=ExtResource("2_5hje7")]
+
+[node name="CCoffinSprite" parent="." instance=ExtResource("2_6p7ok")]
+material = null
+animation = &"attack_down"
+frame = 17
+frame_progress = 1.0
+
+[node name="CCoffinCollision" parent="." instance=ExtResource("3_6nex1")]
+visible = false
+position = Vector2(0, 11)
+shape = SubResource("RectangleShape2D_sjsw6")
+metadata/_edit_lock_ = true
+
+[node name="CCoffinMovement" parent="." instance=ExtResource("4_sjsw6")]
+
+[node name="CCoffinAttack" parent="." instance=ExtResource("5_123ql")]
+
+[node name="CCoffinHurtbox" parent="." instance=ExtResource("6_ymkrj")]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CCoffinHurtbox"]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_ymkrj")

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbbjss5ghb8ag"]
+
+[ext_resource type="Script" uid="uid://kicotpaiy2d7" path="res://source/enemies/coffin/hurtbox/c_coffin_hurtbox.gd" id="1_girpe"]
+
+[node name="CCoffinHurtbox" type="Area2D"]
+script = ExtResource("1_girpe")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

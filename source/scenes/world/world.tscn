@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://cb5d3qjslwhhp"]
+[gd_scene load_steps=4 format=3 uid="uid://cb5d3qjslwhhp"]
 
 [ext_resource type="Script" uid="uid://dcv5idurecssu" path="res://source/scenes/world/world.gd" id="1_2lkty"]
 [ext_resource type="PackedScene" uid="uid://d207crbenrx2g" path="res://source/player/player.tscn" id="2_6l3pb"]
+[ext_resource type="PackedScene" path="res://source/enemies/coffin/coffin.tscn" id="3_a7t70"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_2lkty")
 
 [node name="Player" parent="." instance=ExtResource("2_6l3pb")]
+
+[node name="Coffin" parent="." instance=ExtResource("3_a7t70")]
+position = Vector2(-176, 374)
