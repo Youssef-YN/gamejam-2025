@@ -8,3 +8,10 @@ script = ExtResource("1_nd55w")
 
 [node name="BulletSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_riypy")
+
+[node name="ShootLine" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 10, 0)
+width = 1.0
+default_color = Color(1, 1, 1, 0.44313726)
+joint_mode = 2
+antialiased = true
