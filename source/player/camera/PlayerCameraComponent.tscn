@@ -93,8 +93,8 @@ shader_parameter/step_pixelated = 1000
 shader_parameter/color_A = Color(0, 0.57951856, 0.2259359, 1)
 shader_parameter/color_B = Color(0.1, 0.1, 0.1, 1)
 shader_parameter/dithering_bayer = false
-shader_parameter/animated_dithering = false
-shader_parameter/smooth_animate = false
+shader_parameter/animated_dithering = true
+shader_parameter/smooth_animate = true
 shader_parameter/interval = 0.1
 
 [node name="PlayerCameraComponent" type="Camera2D"]
