@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d207crbenrx2g"]
+[gd_scene load_steps=11 format=3 uid="uid://d207crbenrx2g"]
 
 [ext_resource type="Script" uid="uid://b5mhxsd54mtg6" path="res://source/player/player.gd" id="1_jct2x"]
 [ext_resource type="PackedScene" uid="uid://bseor2avmi8e1" path="res://source/player/sprite/player_sprite_component.tscn" id="2_xim07"]
@@ -7,9 +7,14 @@
 [ext_resource type="PackedScene" uid="uid://c8owyha7xyiv2" path="res://source/player/camera/PlayerCameraComponent.tscn" id="4_glqx2"]
 [ext_resource type="PackedScene" uid="uid://df65hio0rjb14" path="res://source/player/collision/PlayerCollisionComponent.tscn" id="5_favdl"]
 [ext_resource type="PackedScene" uid="uid://d1ikyu2h020fj" path="res://source/player/attack/player_attack_component.tscn" id="6_asuwg"]
+[ext_resource type="PackedScene" uid="uid://coaojspr1ggp5" path="res://source/player/hurtbox/player_hurtbox.tscn" id="8_4eph7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_asuwg"]
 size = Vector2(10, 10)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7t8kb"]
+radius = 8.0
+height = 34.0
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_jct2x")
@@ -17,7 +22,7 @@ script = ExtResource("1_jct2x")
 [node name="PlayerStompComponent" parent="." instance=ExtResource("2_y2357")]
 
 [node name="PlayerSpriteComponent" parent="." instance=ExtResource("2_xim07")]
-frame_progress = 0.6704891
+animation = &"idle_up"
 
 [node name="PlayerMovementComponent" parent="." instance=ExtResource("3_u10tu")]
 
@@ -28,3 +33,9 @@ position = Vector2(0, 12)
 shape = SubResource("RectangleShape2D_asuwg")
 
 [node name="PlayerAttackComponent" parent="." instance=ExtResource("6_asuwg")]
+
+[node name="PlayerHurtbox" parent="." instance=ExtResource("8_4eph7")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerHurtbox"]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_7t8kb")

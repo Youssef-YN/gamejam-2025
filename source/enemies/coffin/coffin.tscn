@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cssf0mxctpjy3"]
+[gd_scene load_steps=10 format=3 uid="uid://dnbxm86ac8xy8"]
 
 [ext_resource type="Script" uid="uid://vdfq85xtel12" path="res://source/enemies/coffin/coffin.gd" id="1_b7g0c"]
 [ext_resource type="PackedScene" uid="uid://dy726ofetvj73" path="res://source/enemies/coffin/health/c_coffin_health.tscn" id="2_5hje7"]
@@ -22,7 +22,6 @@ script = ExtResource("1_b7g0c")
 [node name="CCoffinHealth" parent="." instance=ExtResource("2_5hje7")]
 
 [node name="CCoffinSprite" parent="." instance=ExtResource("2_6p7ok")]
-material = null
 animation = &"attack_down"
 frame = 17
 frame_progress = 1.0

@@ -6,4 +6,4 @@ class_name EnemyCoffin
 @onready var health: CoffinHealthComponent = $CCoffinHealth
 @onready var attack: CoffinAttackComponent = $CCoffinAttack
 
-@onready var is_dying: bool = false
+var is_shown: bool = false
