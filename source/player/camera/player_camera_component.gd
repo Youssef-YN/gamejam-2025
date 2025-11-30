@@ -2,10 +2,11 @@ extends Camera2D
 class_name PlayerCameraComponent
 @onready var shader_rect: ColorRect = $CanvasLayer/ColorRect
 
-@export var is_shader_on: bool:
+@export var is_shader_on: bool = true:
 	set(value):
 		_is_shader_on = value
-		shader_rect.visible = value
+		if shader_rect:
+			shader_rect.visible = value
 	get:
 		return _is_shader_on
 

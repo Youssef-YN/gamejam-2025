@@ -5,10 +5,11 @@ class_name PlayerAttackComponent
 
 var player: Player
 
-@export var is_showing_line: bool:
+@export var is_showing_line: bool = true:
 	set(value):
 		_is_showing_line = value
-		line.visible = is_showing_line
+		if line:
+			line.visible = is_showing_line
 	get:
 		return _is_showing_line
 

@@ -102,7 +102,6 @@ zoom = Vector2(3, 3)
 process_callback = 0
 position_smoothing_enabled = true
 script = ExtResource("1_33c2o")
-is_shader_on = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
