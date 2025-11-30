@@ -21,7 +21,7 @@ func _ready() -> void:
 
 
 func _draw():
-	draw_arc(Vector2.ZERO, collision_circle.shape.radius, 0, TAU, 64, Color.RED, 1)
+		draw_arc(Vector2.ZERO, collision_circle.shape.radius, 0, TAU, 64, Color.GREEN, 1)
 
 
 
