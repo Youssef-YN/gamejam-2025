@@ -577,8 +577,9 @@ animations = [{
 }]
 
 [node name="PlayerSpriteComponent" type="AnimatedSprite2D"]
+modulate = Color(0, 0.7155085, 3.85046e-07, 1)
 sprite_frames = SubResource("SpriteFrames_mxiqm")
-animation = &"death"
+animation = &"idle_down"
 autoplay = "idle_down"
 script = ExtResource("1_mxiqm")
 
