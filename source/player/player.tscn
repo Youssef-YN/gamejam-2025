@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://d207crbenrx2g"]
+[gd_scene load_steps=9 format=3 uid="uid://d207crbenrx2g"]
 
 [ext_resource type="Script" uid="uid://b5mhxsd54mtg6" path="res://source/player/player.gd" id="1_jct2x"]
 [ext_resource type="PackedScene" uid="uid://bseor2avmi8e1" path="res://source/player/sprite/player_sprite_component.tscn" id="2_xim07"]
+[ext_resource type="PackedScene" uid="uid://qmv781t4vgoo" path="res://source/player/stomp/player_stomp_component.tscn" id="2_y2357"]
 [ext_resource type="PackedScene" uid="uid://cak6h42gcv3pw" path="res://source/player/movement/player_movement_component.tscn" id="3_u10tu"]
 [ext_resource type="PackedScene" uid="uid://c8owyha7xyiv2" path="res://source/player/camera/PlayerCameraComponent.tscn" id="4_glqx2"]
 [ext_resource type="PackedScene" uid="uid://df65hio0rjb14" path="res://source/player/collision/PlayerCollisionComponent.tscn" id="5_favdl"]
@@ -12,6 +13,8 @@ size = Vector2(10, 10)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_jct2x")
+
+[node name="PlayerStompComponent" parent="." instance=ExtResource("2_y2357")]
 
 [node name="PlayerSpriteComponent" parent="." instance=ExtResource("2_xim07")]
 frame_progress = 0.6704891

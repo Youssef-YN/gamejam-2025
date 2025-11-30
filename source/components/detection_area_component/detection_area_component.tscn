@@ -1,15 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://blfotjsg1hqpa"]
+[gd_scene load_steps=2 format=3 uid="uid://blfotjsg1hqpa"]
 
 [ext_resource type="Script" uid="uid://dd6mep4yqciq3" path="res://source/components/detection_area_component/detection_area_component.gd" id="1_i8sx2"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_i8sx2"]
-radius = 12.5
-
 [node name="DetectionAreaComponent" type="Area2D"]
 script = ExtResource("1_i8sx2")
-
-[node name="CollisionCircle" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_i8sx2")
 
 [node name="LifeTime" type="Timer" parent="."]
 one_shot = true

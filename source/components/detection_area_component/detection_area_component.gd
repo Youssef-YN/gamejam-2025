@@ -2,15 +2,19 @@ extends Area2D
 class_name DetectionAreaComponent
 const SCENE = preload("uid://blfotjsg1hqpa")
 
-@onready var collision_circle: CollisionShape2D = $CollisionCircle
+@onready var collision_circle: CollisionShape2D
 @onready var life_time: Timer = $LifeTime
 
-@export var expansion_rate: int = 1
-@export var life_time_seconds: int = 4
+@export var expansion_rate: float = 1
+@export var life_time_seconds: float = 4
 
 
 
 func _ready() -> void:
+	collision_circle = CollisionShape2D.new()
+	collision_circle.shape = CircleShape2D.new()
+	collision_circle.shape.radius = 0
+	add_child(collision_circle)
 	life_time.wait_time = life_time_seconds
 	life_time.start()
 
@@ -27,7 +31,7 @@ func _physics_process(_delta: float) -> void:
 
 
 
-func get_instance(expansion_r: int = 1, life_time_s: int = 4) -> DetectionAreaComponent:
+static func get_instance(expansion_r: float = 1, life_time_s: float = 4) -> DetectionAreaComponent:
 	var instance: DetectionAreaComponent = SCENE.instantiate()
 	instance.expansion_rate = expansion_r
 	instance.life_time_seconds = life_time_s
