@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=4 uid="uid://fcehxpog6t32"]
+[gd_scene load_steps=4 format=4 uid="uid://fcehxpog6t32"]
 
 [ext_resource type="Script" uid="uid://dy5erqo0edjbd" path="res://source/maps/base_level_1/base_level_1.gd" id="1_asp8j"]
 [ext_resource type="TileSet" uid="uid://4rr2etjp5qli" path="res://assets/tilemaps/prototype.tres" id="2_6088x"]
+[ext_resource type="PackedScene" uid="uid://c8v134nnukg18" path="res://source/components/win_wall_component/win_wall_component.tscn" id="3_6088x"]
 
 [node name="BaseLevel1" type="Node2D" node_paths=PackedStringArray("player_spawn", "enemy_spawns")]
 script = ExtResource("1_asp8j")
@@ -58,3 +59,6 @@ position = Vector2(292, 1145)
 
 [node name="Marker2D11" type="Marker2D" parent="EnemySpawns"]
 position = Vector2(1079, 1375)
+
+[node name="WinWallComponent" parent="." instance=ExtResource("3_6088x")]
+position = Vector2(55, 1100)

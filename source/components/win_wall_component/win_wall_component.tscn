@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://c8v134nnukg18"]
+
+[ext_resource type="Texture2D" uid="uid://c7oearo40t7px" path="res://assets/tilemaps/ProtoTiles.png" id="1_0ntgt"]
+[ext_resource type="Script" uid="uid://pbyfdkooelof" path="res://source/components/win_wall_component/win_wall_component.gd" id="1_yvhyf"]
+[ext_resource type="FontFile" uid="uid://cfgbup4gpgr3q" path="res://assets/fonts/GrapeSoda.ttf" id="3_rbsk0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yvhyf"]
+size = Vector2(16, 16)
+
+[sub_resource type="LabelSettings" id="LabelSettings_t0g17"]
+font = ExtResource("3_rbsk0")
+
+[node name="WinWallComponent" type="Node2D"]
+script = ExtResource("1_yvhyf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 1, 0, 1)
+texture = ExtResource("1_0ntgt")
+region_enabled = true
+region_rect = Rect2(144, 128, 16, 16)
+
+[node name="VisibilityTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_yvhyf")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 10.0
+offset_right = 20.0
+offset_bottom = 33.0
+grow_horizontal = 2
+text = "WIN"
+label_settings = SubResource("LabelSettings_t0g17")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="timeout" from="VisibilityTimer" to="." method="_on_visibility_timer_timeout"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
