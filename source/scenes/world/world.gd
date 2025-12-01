@@ -6,4 +6,4 @@ func _ready() -> void:
 	Log.info("World is loaded!")
 
 func death():
-	get_tree().quit()
+	get_tree().change_scene_to_file("res://source/maps/losing_map/losing_map.tscn")

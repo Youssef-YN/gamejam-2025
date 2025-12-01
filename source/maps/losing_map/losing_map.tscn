@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://ctu3mp185s18o"]
+
+[ext_resource type="Script" uid="uid://md6yeddc6jb0" path="res://source/maps/losing_map/losing_map.gd" id="1_h2mjk"]
+[ext_resource type="Texture2D" uid="uid://cn87subtx4oyu" path="res://assets/output/gamejam_logo.png" id="1_wcipw"]
+[ext_resource type="FontFile" uid="uid://cfgbup4gpgr3q" path="res://assets/fonts/GrapeSoda.ttf" id="2_gdkj2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_h2mjk"]
+font = ExtResource("2_gdkj2")
+font_size = 64
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jilrf"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="LosingMap" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h2mjk")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_wcipw")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "YOU LOST"
+label_settings = SubResource("LabelSettings_h2mjk")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_jilrf")
+text = "RETURN TO MAIN MENU"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
