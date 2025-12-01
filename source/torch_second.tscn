@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://b46omlj4bpw24"]
+
+[ext_resource type="Texture2D" uid="uid://g2kk5tpw5gg4" path="res://source/torch_1.png" id="1_pda5t"]
+[ext_resource type="Texture2D" uid="uid://bfhrinpmw6h3n" path="res://source/torch_2.png" id="2_rsduf"]
+[ext_resource type="Texture2D" uid="uid://c5fum3uo6f7tm" path="res://source/torch_3.png" id="3_1qsqy"]
+[ext_resource type="Texture2D" uid="uid://b0efq2rvvmjjl" path="res://source/torch_4.png" id="4_cuyo3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_unen7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pda5t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_rsduf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1qsqy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_cuyo3")
+}],
+"loop": true,
+"name": &"Torch",
+"speed": 5.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_unen7")
+animation = &"Torch"
