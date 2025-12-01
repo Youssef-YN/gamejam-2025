@@ -7,6 +7,7 @@ class_name Player
 @onready var collision: PlayerCollisionComponent = $PlayerCollisionComponent
 @onready var camera: PlayerCameraComponent = $PlayerCameraComponent
 @onready var movement: PlayerMovementComponent = $PlayerMovementComponent
+@onready var music: BackgroundMusicComponent = $Backgroundmusic
 
 
 

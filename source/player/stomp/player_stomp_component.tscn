@@ -1,11 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://qmv781t4vgoo"]
+[gd_scene load_steps=3 format=3 uid="uid://qmv781t4vgoo"]
 
 [ext_resource type="Script" uid="uid://dmh7kmtsfpocp" path="res://source/player/stomp/player_stomp_component.gd" id="1_nxbe0"]
+[ext_resource type="AudioStream" uid="uid://bqmmhpu0htw5u" path="res://assets/sounds/stomp2.mp3" id="2_5btmm"]
 
 [node name="PlayerStompComponent" type="Node2D"]
 script = ExtResource("1_nxbe0")
 
 [node name="Cooldown" type="Timer" parent="."]
 one_shot = true
+
+[node name="StompSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_5btmm")
+volume_db = -8.955
 
 [connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]

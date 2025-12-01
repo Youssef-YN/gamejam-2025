@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://d1el5gfyfitfi"]
+[gd_scene load_steps=6 format=3 uid="uid://d1el5gfyfitfi"]
 
 [ext_resource type="Script" uid="uid://c0dfsvxaxdm8t" path="res://source/components/wall_component/wall_component.gd" id="1_cewg8"]
 [ext_resource type="Texture2D" uid="uid://c7oearo40t7px" path="res://assets/tilemaps/ProtoTiles.png" id="1_h24sj"]
+[ext_resource type="AudioStream" uid="uid://b4yo8louqmhmc" path="res://assets/sounds/hit.mp3" id="3_wupsm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cewg8"]
 size = Vector2(16, 16)
@@ -30,6 +31,9 @@ shape = SubResource("RectangleShape2D_wupsm")
 [node name="VisibilityTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="HitNoise" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_wupsm")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="VisibilityTimer" to="." method="_on_visibility_timer_timeout"]

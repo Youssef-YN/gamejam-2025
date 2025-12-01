@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d207crbenrx2g"]
+[gd_scene load_steps=13 format=3 uid="uid://d207crbenrx2g"]
 
 [ext_resource type="Script" uid="uid://b5mhxsd54mtg6" path="res://source/player/player.gd" id="1_jct2x"]
 [ext_resource type="PackedScene" uid="uid://bseor2avmi8e1" path="res://source/player/sprite/player_sprite_component.tscn" id="2_xim07"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://df65hio0rjb14" path="res://source/player/collision/PlayerCollisionComponent.tscn" id="5_favdl"]
 [ext_resource type="PackedScene" uid="uid://d1ikyu2h020fj" path="res://source/player/attack/player_attack_component.tscn" id="6_asuwg"]
 [ext_resource type="PackedScene" uid="uid://coaojspr1ggp5" path="res://source/player/hurtbox/player_hurtbox.tscn" id="8_4eph7"]
+[ext_resource type="AudioStream" uid="uid://bbqnt7ykrk7dx" path="res://assets/sounds/backgroundmusic.mp3" id="9_q3bky"]
+[ext_resource type="Script" uid="uid://dljtix0f766k1" path="res://source/player/backgroundmusic.gd" id="10_fhjrr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_asuwg"]
 size = Vector2(10, 10)
@@ -39,3 +41,8 @@ shape = SubResource("RectangleShape2D_asuwg")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerHurtbox"]
 position = Vector2(0, 3)
 shape = SubResource("CapsuleShape2D_7t8kb")
+
+[node name="Backgroundmusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_q3bky")
+volume_db = -24.0
+script = ExtResource("10_fhjrr")

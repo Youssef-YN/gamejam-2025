@@ -2,8 +2,9 @@ extends Node2D
 class_name PlayerStompComponent
 
 @onready var cooldown_timer: Timer = $Cooldown
+@onready var stomp_sound: AudioStreamPlayer2D = $StompSound
 
-@export var cooldown_length: float = 5
+@export var cooldown_length: float = 10
 var can_stomp: bool = true
 
 var player: Player
@@ -23,6 +24,7 @@ func _unhandled_input(event: InputEvent) -> void:
 ## Then since we just stomped we set can stomp is false, then set a timer to enablet it back after it's done
 func stomp() -> void:
 	if can_stomp:
+		stomp_sound.play()
 		var area: DetectionAreaComponent = DetectionAreaComponent.get_instance(1.5, 3)
 		area.global_position = player.global_position
 		Context.world.add_child(area)

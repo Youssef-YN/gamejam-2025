@@ -2,6 +2,7 @@ extends StaticBody2D
 class_name WallComponent
 const SCENE = preload("uid://d1el5gfyfitfi")
 @onready var timer: Timer = $VisibilityTimer
+@onready var hit_noise: AudioStreamPlayer2D = $HitNoise
 
 func _ready() -> void:
 	visible = false
@@ -13,6 +14,7 @@ static func get_instance() -> WallComponent:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.get_parent() is Bullet:
+		hit_noise.play()
 		area.get_parent().queue_free()
 		var hit: DetectionAreaComponent = DetectionAreaComponent.get_instance(2, 1)
 		hit.global_position = global_position
