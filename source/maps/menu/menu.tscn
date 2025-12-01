@@ -1349,4 +1349,5 @@ autoplay = "Torch"
 position = Vector2(128, 144)
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Info" to="." method="_on_info_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

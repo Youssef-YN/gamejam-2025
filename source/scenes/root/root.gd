@@ -8,6 +8,7 @@ class_name Root
 const WORLD = preload("uid://cb5d3qjslwhhp")
 const BASE_LEVEL_1 = preload("uid://fcehxpog6t32")
 const MENU = preload("uid://dq5x2teh42hue")
+const INFO_ROOM = preload("uid://dlty2p0ho1lav")
 
 
 func _ready() -> void:
