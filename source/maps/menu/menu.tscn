@@ -1239,7 +1239,7 @@ text = "Blind Cowboy"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="Play" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -1254,7 +1254,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_yke8u")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_klg7u")
 text = "Play"
 
-[node name="Button2" type="Button" parent="VBoxContainer"]
+[node name="Info" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -1267,9 +1267,9 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_45172")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_klg7u")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yke8u")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_klg7u")
-text = "Settings"
+text = "Info"
 
-[node name="Button3" type="Button" parent="VBoxContainer"]
+[node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -1347,3 +1347,6 @@ autoplay = "Torch"
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(128, 144)
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
