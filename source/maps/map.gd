@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 class_name Map
 const PLAYER = preload("uid://d207crbenrx2g")
 
@@ -12,6 +12,7 @@ func ready_override():
 
 
 func _ready() -> void:
+	_spawn_player()
 	ready_override()
 
 

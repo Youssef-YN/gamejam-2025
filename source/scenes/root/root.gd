@@ -6,12 +6,13 @@ class_name Root
 ## Meaning scene switching, map switching... will happen here.
 
 const WORLD = preload("uid://cb5d3qjslwhhp")
+const BASE_LEVEL_1 = preload("uid://fcehxpog6t32")
 
 
 func _ready() -> void:
 	Context.root = self
 	Log.info("Root is loaded!")
-	load_world()
+	load_map(BASE_LEVEL_1)
 
 
 

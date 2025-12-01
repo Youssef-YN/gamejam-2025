@@ -14,7 +14,7 @@ func _ready() -> void:
 	collision_circle = CollisionShape2D.new()
 	collision_circle.shape = CircleShape2D.new()
 	collision_circle.shape.radius = 0
-	add_child(collision_circle)
+	add_child.call_deferred(collision_circle)
 	life_time.wait_time = life_time_seconds
 	life_time.start()
 
