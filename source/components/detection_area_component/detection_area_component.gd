@@ -7,6 +7,7 @@ const SCENE = preload("uid://blfotjsg1hqpa")
 
 @export var expansion_rate: float = 1
 @export var life_time_seconds: float = 4
+@export var color: Color = Color.GREEN
 
 
 
@@ -21,7 +22,7 @@ func _ready() -> void:
 
 
 func _draw():
-		draw_arc(Vector2.ZERO, collision_circle.shape.radius, 0, TAU, 64, Color.GREEN, 1)
+		draw_arc(Vector2.ZERO, collision_circle.shape.radius, 0, TAU, 64, color, 1)
 
 
 
@@ -31,10 +32,11 @@ func _physics_process(_delta: float) -> void:
 
 
 
-static func get_instance(expansion_r: float = 1, life_time_s: float = 4) -> DetectionAreaComponent:
+static func get_instance(expansion_r: float = 1, life_time_s: float = 4, color_rgb: Color = Color.GREEN) -> DetectionAreaComponent:
 	var instance: DetectionAreaComponent = SCENE.instantiate()
 	instance.expansion_rate = expansion_r
 	instance.life_time_seconds = life_time_s
+	instance.color = color_rgb
 	return instance
 
 
