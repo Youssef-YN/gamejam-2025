@@ -15,7 +15,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		timer.start()
 	
 	if area is PlayerHurtboxComponent:
-		get_tree().quit()
+		Context.root.load_map(Context.root.WIN_MAP)
 
 
 

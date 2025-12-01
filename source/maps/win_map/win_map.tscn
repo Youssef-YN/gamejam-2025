@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://cimbausg7bn8k"]
+
+[ext_resource type="Script" uid="uid://ct0iuxo544ke1" path="res://source/maps/win_map/win_map.gd" id="1_w6tvj"]
+[ext_resource type="Texture2D" uid="uid://cn87subtx4oyu" path="res://assets/output/gamejam_logo.png" id="2_vgs11"]
+[ext_resource type="FontFile" uid="uid://cfgbup4gpgr3q" path="res://assets/fonts/GrapeSoda.ttf" id="3_d20hq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_b52nf"]
+font = ExtResource("3_d20hq")
+font_size = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d20hq"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="WinMap" type="Node2D" node_paths=PackedStringArray("player_spawn")]
+script = ExtResource("1_w6tvj")
+player_spawn = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, 32)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4.9999847, -70)
+scale = Vector2(0.484, 0.484)
+texture = ExtResource("2_vgs11")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -60.0
+offset_top = -8.0
+offset_right = 56.0
+offset_bottom = 24.0
+text = "You Won!"
+label_settings = SubResource("LabelSettings_b52nf")
+
+[node name="Button" type="Button" parent="."]
+offset_left = -56.0
+offset_top = 40.0
+offset_right = 59.0
+offset_bottom = 71.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_d20hq")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_d20hq")
+text = "Back to menu"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

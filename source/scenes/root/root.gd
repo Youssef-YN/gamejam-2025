@@ -9,6 +9,7 @@ const WORLD = preload("uid://cb5d3qjslwhhp")
 const BASE_LEVEL_1 = preload("uid://fcehxpog6t32")
 const MENU = preload("uid://dq5x2teh42hue")
 const INFO_ROOM = preload("uid://dlty2p0ho1lav")
+const WIN_MAP = preload("uid://cimbausg7bn8k")
 
 
 func _ready() -> void:
