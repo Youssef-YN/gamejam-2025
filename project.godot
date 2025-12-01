@@ -10,10 +10,12 @@ config_version=5
 
 [application]
 
-config/name="GameJam2025"
+config/name="BlindCowboy"
 run/main_scene="uid://blut7g0bpjqdp"
 config/features=PackedStringArray("4.5", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/image="uid://dm1rbun3qwp84"
+config/icon="uid://cn87subtx4oyu"
 
 [autoload]
 
