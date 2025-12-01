@@ -1348,6 +1348,22 @@ autoplay = "Torch"
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(128, 144)
 
+[node name="Label2" type="Label" parent="."]
+offset_left = 29.0
+offset_top = 207.0
+offset_right = 361.0
+offset_bottom = 344.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 10
+theme_override_fonts/font = ExtResource("4_a7ti6")
+theme_override_font_sizes/font_size = 32
+text = "Controls:
+WASD - Movement
+Space - Echolocation
+Mouse button - Shoot"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/Info" to="." method="_on_info_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
